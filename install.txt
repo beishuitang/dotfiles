@@ -1,0 +1,52 @@
+vi /etc/pacman.d/mirrorlist
+pacman -S iw wpa_supplicant dialog 
+pacman -S intel-ucode
+pacman -S vim
+pacman -S xorg-video-intel nvidia-340xx xorg-server bumblebee
+systemctl enable bumblebeed
+pacman -S xorg-xinput
+pacman -S xfce4
+pacman -S xfce4-goodies
+pacman -S firefox eclipse-jee
+useradd santi
+gpasswd -a santi users....
+visudo
+pacman -S noto-fonts-cjk emoji extra
+pacman -S fcitx-sunpinyin fcitx-cloudpinyin fcitx-gtk2 fcitx-gtk3
+pacman -S tilda
+pacman -S ttf-dejavu
+pacman -S alsa-utils alsa-plugins alsa-firmware
+pacman -S pulseaudio  pulseaudio-alsa pavucontrol
+pacman -S udisks2 
+
+pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc ntfs-3g
+
+
+## startx on login
+ 
+vim .bash_profile
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+## auto login
+systemctl edit getty@tty1
+#/etc/systemd/system/getty@tty1.service.d/override.conf
+
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin username --noclear %I $TERM
+
+##aur
+
+[archlinuxcn]
+Server = http://repo.archlinuxcn.org/$arch
+## or use a CDN (beta)
+#Server = https://cdn.repo.archlinuxcn.org/$arch
+## or install archlinuxcn-mirrorlist-git and use the mirrorlist
+#Include = /etc/pacman.d/archlinuxcn-mirrorlist
+
+[aur-archlinux]
+Server = https://repo.itmettke.de/aur/$repo/$arch
+
+pacman -S yay
+
