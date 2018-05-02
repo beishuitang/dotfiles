@@ -71,6 +71,6 @@ set viewdir=$HOME/.vim/view
 
 au BufWinLeave * silent mkview
 au BufWinEnter * silent loadview
-set guifont=Monospace\ Regular\ 16
+set guifont=Source\ code\ Pro\ 16
 set backupdir=~/.vim/backupdir
 set undodir=~/.vim/undodir
