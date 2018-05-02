@@ -1,0 +1,11 @@
+REGEDIT4
+ 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="NotoSansCJKsc-Regular.otf"
+"Microsoft Sans Serif"="NotoSansCJKsc-Regular.otf"
+"MS Sans Serif"="NotoSansCJKsc-Regular.otf"
+"Tahoma"="NotoSansCJKsc-Regular.otf"
+"Tahoma Bold"="NotoSansCJKsc-Regular.otf"
+"SimSun"="NotoSansCJKsc-Regular.otf"
+"Arial"="NotoSansCJKsc-Regular.otf"
+"Arial Black"="NotoSansCJKsc-Regular.otf"
