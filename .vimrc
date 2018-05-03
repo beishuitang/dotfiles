@@ -58,6 +58,8 @@ if has('syntax') && has('eval')
 	packadd! matchit
 endif
 
+filetype plugin on
+syntax on
 set nu
 "set foldmethod=manual
 "set noundofile
@@ -74,3 +76,4 @@ au BufWinEnter * silent loadview
 set guifont=Source\ code\ Pro\ 16
 set backupdir=~/.vim/backupdir
 set undodir=~/.vim/undodir
+set ff=unix "转化dos/windows行尾为unix行尾
