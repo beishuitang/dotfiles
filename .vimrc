@@ -114,8 +114,8 @@ set softtabstop=4 shiftwidth=4 expandtab    "正常缩进
 " :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab  "linux kernel 缩进
 set viewdir=$HOME/.vim/view 
 
-au BufWinLeave * silent mkview
-au BufWinEnter * silent loadview
+"au BufWinLeave * silent mkview
+"au BufWinEnter * silent loadview
 set guifont=Source\ code\ Pro\ 16
 set backupdir=~/.vim/backupdir
 set undodir=~/.vim/undodir
