@@ -27,7 +27,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'Chiel92/vim-autoformat'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -120,3 +120,4 @@ set guifont=Source\ code\ Pro\ 16
 set backupdir=~/.vim/backupdir
 set undodir=~/.vim/undodir
 set ff=unix "转化dos/windows行尾为unix行尾
+set fileencodings=utf-8,gbk
