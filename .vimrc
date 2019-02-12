@@ -1,13 +1,13 @@
 " An example for a vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2017 Sep 20
+" Maintainer:   Bram Moolenaar <Bram@vim.org>
+" Last change:  2017 Sep 20
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
+"             for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+"           for OpenVMS:  sys$login:.vimrc
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
     finish
@@ -28,6 +28,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
+"Plugin 'Valloric/YouCompleteMe'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -60,11 +61,11 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 if has("vms")
-    set nobackup		" do not keep a backup file, use versions instead
+    set nobackup                " do not keep a backup file, use versions instead
 else
-    set backup		" keep a backup file (restore to previous version)
+    set backup          " keep a backup file (restore to previous version)
     if has('persistent_undo')
-        set undofile	" keep an undo file (undo changes after closing)
+        set undofile    " keep an undo file (undo changes after closing)
     endif
 endif
 
@@ -87,7 +88,7 @@ if has("autocmd")
 
 else
 
-    set autoindent		" always set autoindenting on
+    set autoindent              " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -112,7 +113,7 @@ set nu
 "set autoindent
 set softtabstop=4 shiftwidth=4 expandtab    "正常缩进
 " :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab  "linux kernel 缩进
-set viewdir=$HOME/.vim/view 
+set viewdir=$HOME/.vim/view
 
 "au BufWinLeave * silent mkview
 "au BufWinEnter * silent loadview
@@ -121,3 +122,14 @@ set backupdir=~/.vim/backupdir
 set undodir=~/.vim/undodir
 set ff=unix "转化dos/windows行尾为unix行尾
 set fileencodings=utf-8,gbk
+
+"auto-format
+"F5自动格式化代码并保存
+noremap <F5> :Autoformat<CR>:w<CR>
+let g:autoformat_verbosemode=1
+"自动格式化代码，针对所有支持的文件
+"au BufWrite * :Autoformat
+"自动格式化python代码
+"au BufWrite *.py :Autoformat
+au BufWrite *.c :Autoformat
+au BufWrite *.h :Autoformat
